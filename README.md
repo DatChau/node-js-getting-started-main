@@ -1,39 +1,84 @@
-# node-js-getting-started
+# gatsby-source-greenhouse
 
-A barebones Node.js app using [Express 4](http://expressjs.com/).
+> Loads job openings from greenhouse.io into Gatsby.js. Based on [gatsby-source-workable](https://github.com/tumblbug/gatsby-source-workable).
 
-This application supports the [Getting Started on Heroku with Node.js](https://devcenter.heroku.com/articles/getting-started-with-nodejs) article - check it out.
+## Status
 
-## Running Locally
+[![npm version](https://badge.fury.io/js/gatsby-source-greenhouse.svg)](https://badge.fury.io/js/gatsby-source-greenhouse)
 
-Make sure you have [Node.js](http://nodejs.org/) and the [Heroku CLI](https://cli.heroku.com/) installed.
+## Installation
 
-```sh
-$ git clone https://github.com/heroku/node-js-getting-started.git # or clone your own fork
-$ cd node-js-getting-started
-$ npm install
-$ npm start
+```bash
+npm install gatsby-source-greenhouse
 ```
 
-Your app should now be running on [localhost:5000](http://localhost:5000/).
-
-## Deploying to Heroku
-
-```
-$ heroku create
-$ git push heroku main
-$ heroku open
-```
 or
 
-[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+```bash
+yarn add gatsby-source-greenhouse
+```
 
-## Documentation
+## Usage
 
-For more information about using Node.js on Heroku, see these Dev Center articles:
+To use this source you need to supply a Greenhouse API token. You can create a Greenhouse API token by logging into Greenhouse and going to `Configure > Dev Center > API Credential Management > Create New API Key`. Make sure it is type **Harvest**.
 
-- [Getting Started on Heroku with Node.js](https://devcenter.heroku.com/articles/getting-started-with-nodejs)
-- [Heroku Node.js Support](https://devcenter.heroku.com/articles/nodejs-support)
-- [Node.js on Heroku](https://devcenter.heroku.com/categories/nodejs)
-- [Best Practices for Node.js Development](https://devcenter.heroku.com/articles/node-best-practices)
-- [Using WebSockets on Heroku with Node.js](https://devcenter.heroku.com/articles/node-websockets)
+API keys need to be authorized to access specific endpoints. Go to `API Credential Management > Manage Permissions` and make sure your key is authorized for the following endpoints:
+
+* Jobs
+* Job Posts
+* Departments
+
+Next, edit `gatsby-config.js` to use the plugin:
+
+```
+{
+  ...
+  plugins: [
+    ...
+    {
+      resolve: `gatsby-source-greenhouse`,
+      options: {
+        apiToken: `{API_TOKEN}`,
+        jobPosts: {
+          live: true
+        }
+      },
+    },
+  ]
+}
+```
+
+By default, `gatsby-source-greenhouse` will only retrieve job openings that are marked as _live_. You can change this by passing in `false` in the `jobPosts` plugin option parameter.
+
+## Querying
+
+You can query the all `JobPost` created by the plugin as follows:
+
+```graphql
+{
+    allGreenhouseJobPost {
+        edges {
+            node {
+                ...
+            }
+        }
+    }
+}
+```
+
+You can also query all `JobPost` broken out for each department:
+
+```graphql
+{
+  allGreenhouseDepartment {
+    edges {
+      node {
+        name
+        childrenGreenhouseJobPost {
+          title
+        }
+      }
+    }
+  }
+}
+```

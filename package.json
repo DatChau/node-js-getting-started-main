@@ -1,31 +1,45 @@
 {
-  "name": "node-js-getting-started",
-  "version": "0.3.0",
-  "description": "A sample Node.js app using Express 4",
-  "engines": {
-    "node": "16.x"
-  },
-  "main": "index.js",
+  "name": "gatsby-source-greenhouse",
+  "version": "3.0.0",
+  "description": "Gatsby source plugin for loading job posts from greenhouse.io",
+  "main": "gatsby-node.js",
   "scripts": {
-    "start": "node index.js",
-    "test": "node test.js"
-  },
-  "dependencies": {
-    "ejs": "^3.1.5",
-    "express": "^4.15.2"
-  },
-  "devDependencies": {
-    "got": "^11.3.0",
-    "tape": "^4.7.0"
+    "build": "babel src --out-dir . --ignore apiTest.js",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/heroku/node-js-getting-started"
+    "url": "https://github.com/diegolamanno/gatsby-source-greenhouse"
   },
-  "keywords": [
-    "node",
-    "heroku",
-    "express"
+  "bugs": {
+    "url": "https://github.com/diegolamanno/gatsby-source-greenhouse/issues"
+  },
+  "contributors": [
+    "Cam Sloan <cameron@sloan.ca>",
+    "Sandra Robotos <sandrar@ecobee.com>",
+    "Bay Phillips <bay.phillips@plated.com>",
+    "Joe Alfaro <joe.alfaro@anchorage.com>"
   ],
-  "license": "MIT"
+  "homepage": "https://github.com/diegolamanno/gatsby-source-greenhouse",
+  "keywords": [
+    "gatsby",
+    "gatsby-plugin",
+    "gatsby-source-plugin",
+    "greenhouse",
+    "ats"
+  ],
+  "author": "Diego La Manno <diegolamanno@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "gatsby-node-helpers": "^0.3.0",
+    "snyk": "^1.349.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.0"
+  },
+  "snyk": true
 }
