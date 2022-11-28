@@ -1,53 +1,54 @@
-# Smart Greenhouse Monitoring System
-Treesponse is a smart greenhouse monitoring system. Smart greenhouse is a concept of greenhouse that cultivates crops without human intervention. Crops in a smart greenhouse grow without adjustment of climate or any human interference by any means for a particular period. The smart greenhouse uses various microprocessors and sensors to perform functions such as controlling temperature and irrigation system. Any type of plant, fruit, and vegetables can be grown at any time of year in a smart greenhouse. This system is cost effective and improves efficiency & versatility of greenhouses
+# Greenhouse Reference Application
 
-## Problem Statement
-### What is the problem?
-Numerous farmers fail to get good profits from greenhouse crops due to the difficulties in regulating two most essential factors : humidity and temperature - both of which affect plant growth. During plant cultivation in a greenhouse, many problems are faced, such as :-
-1. Failure to fulfil some essential requirements such as heat. Light, moisture and carbon dioxide in the amount necessary for optimum growth.
-2. Deficiency/excess of fertilizers
-3. Toxic gases
-4. Exposure to fungus, Bacteria or virus
-5. Attack by insects, animals and allied pests
+## Overview
 
-### Why is there a problem?
-The quality of production is reduced due to irresponsible production i.e. improper regulation of heat and humidity. Innovative infrastructures have been proposed but they are still not very famous in India. People still employ manual labour for the different tasks that have to be done during greenhouse farming.
+Greenhouse is a Java web application built for the Spring community that has two primary goals:
 
-## Introduction to Smart Greenhouse
-A greenhouse is a structure with walls and roof made chiefly of transparent material, such as glass, in which plants requiring regulated climatic conditions are grown[4].
+1. Serve as an open-source, public-facing reference and driver for Spring technology,
+   including Spring MVC, Security, Integration, Social and Mobile projects.      
+2. Help foster and support our passionate application developer community through the development of useful community services.
 
-Many problems are encountered during greenhouse cultivation[1]. These problems result in yield that doesn’t fulfil the international and national market standards. Thus, it results in wastage of energy and crops. 
+## Features
 
-Smart greenhouse is a concept of greenhouse that cultivates crops without human intervention. Crops in a smart greenhouse grow without adjustment of climate or any human interference by any means for a particular period. The smart greenhouse uses various microprocessors and sensors to perform functions such as controlling temperature and irrigation system. Any type of plant, fruit, and vegetables can be grown at any time of year in smart greenhouse. This system is cost effective and improves efficiency & versatility of greenhouses
+* Extensive use of Spring Framework, Spring MVC, Spring Social, Spring Mobile, Spring Security, and Spring Integration projects.
+* An OAuth-based App Catalog that allows Developers to develop new client apps for which users may establish Account->App connections.
+* The ability to connect your local Greenhouse Account to Twitter, Facebook, LinkedIn, and TripIt ServiceProviders.
+* Member Sign Up, Sign In, and Reset Password Modules.
+* A Member Invite Module allowing you to invite your Facebook friends and email contacts.
+* A Member Badge (Award) System that rewards members for community participation.
+* A mobile web version of the app that can be used across multiple smartphone platforms.
+* A Group Event Management Module for powering Spring events, such as conferences and user group meetings.
+* Numerous Spring Framework contributions in the areas of:
+ * Data (S3 File Storage and RDMS Migrations)
+ * Web (Email Templating, Flash Map, Comet)
+* An agile Continuous Deployment CI Process
 
-The objective is to introduce a system that effectively identifies the internal parameters of the greenhouse and monitors those parameters continuously. Also, the environmental parameters are maintained by the system according to the requirement of the plant.
+## Check Out and Build from Source
 
-Sustainable Development Goal trying to achieve :
-1. Industry, Innovation and Infrastructure
-2. Responsible consumption and production
+1. Clone the repository from GitHub:
 
-## Implementation
-Implementation details along with the hardware and software details can be found in the proposal.
+		$ git clone git://github.com/SpringSource/greenhouse.git
 
-## Execution Details
-### smart_greenhouse.pdf
-Contains the schema descriptions of relations in the database.
+2. Navigate into the cloned repository directory:
 
-### smart_greenhouse_monitoring_system.sql
-This is the sql file for the database. Import this in MySQL for the database
+		$ cd greenhouse
 
-### Running the website
-Go to the directory smart_greenhouse_monitoring_system. Run the command :
+3. The project uses [Maven](http://maven.apache.org/) to build:
 
-#### `npm install`
+		$ mvn clean install
 
-This loads the npm modules required for the project. Then execute the command :
+## Running from the Command Line
 
-#### `npm start`
+Deploy the .war to any Servlet 2.5 >, such as Tomcat. By default, the app will run in 'embedded' mode which does not require any external setup. The Tomcat 7 Maven plugin is configured for you in the POM file.
 
-### Starting django server
-Navigate to the Django project directory. Run the following command in the command line :
+1. Launch Tomcat from the command line:
 
-#### `python manage.py runserver`
+		$ mvn t7:run
 
-##### Note : Run the django server on the default port (8000)
+2. Access the deployed webapp at 
+
+		http://localhost:8080/greenhouse
+
+## IDE Support
+
+If you would like to build and run from a Maven/Java Dynamic Web-project-capable IDE, such as Eclipse/SpringSource Tool Suite, you may simply import "as a Maven Project" into your IDE and deploy the project to your IDE's embedded servlet container.
