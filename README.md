@@ -1,84 +1,53 @@
-# gatsby-source-greenhouse
+# Smart Greenhouse Monitoring System
+Treesponse is a smart greenhouse monitoring system. Smart greenhouse is a concept of greenhouse that cultivates crops without human intervention. Crops in a smart greenhouse grow without adjustment of climate or any human interference by any means for a particular period. The smart greenhouse uses various microprocessors and sensors to perform functions such as controlling temperature and irrigation system. Any type of plant, fruit, and vegetables can be grown at any time of year in a smart greenhouse. This system is cost effective and improves efficiency & versatility of greenhouses
 
-> Loads job openings from greenhouse.io into Gatsby.js. Based on [gatsby-source-workable](https://github.com/tumblbug/gatsby-source-workable).
+## Problem Statement
+### What is the problem?
+Numerous farmers fail to get good profits from greenhouse crops due to the difficulties in regulating two most essential factors : humidity and temperature - both of which affect plant growth. During plant cultivation in a greenhouse, many problems are faced, such as :-
+1. Failure to fulfil some essential requirements such as heat. Light, moisture and carbon dioxide in the amount necessary for optimum growth.
+2. Deficiency/excess of fertilizers
+3. Toxic gases
+4. Exposure to fungus, Bacteria or virus
+5. Attack by insects, animals and allied pests
 
-## Status
+### Why is there a problem?
+The quality of production is reduced due to irresponsible production i.e. improper regulation of heat and humidity. Innovative infrastructures have been proposed but they are still not very famous in India. People still employ manual labour for the different tasks that have to be done during greenhouse farming.
 
-[![npm version](https://badge.fury.io/js/gatsby-source-greenhouse.svg)](https://badge.fury.io/js/gatsby-source-greenhouse)
+## Introduction to Smart Greenhouse
+A greenhouse is a structure with walls and roof made chiefly of transparent material, such as glass, in which plants requiring regulated climatic conditions are grown[4].
 
-## Installation
+Many problems are encountered during greenhouse cultivation[1]. These problems result in yield that doesn’t fulfil the international and national market standards. Thus, it results in wastage of energy and crops. 
 
-```bash
-npm install gatsby-source-greenhouse
-```
+Smart greenhouse is a concept of greenhouse that cultivates crops without human intervention. Crops in a smart greenhouse grow without adjustment of climate or any human interference by any means for a particular period. The smart greenhouse uses various microprocessors and sensors to perform functions such as controlling temperature and irrigation system. Any type of plant, fruit, and vegetables can be grown at any time of year in smart greenhouse. This system is cost effective and improves efficiency & versatility of greenhouses
 
-or
+The objective is to introduce a system that effectively identifies the internal parameters of the greenhouse and monitors those parameters continuously. Also, the environmental parameters are maintained by the system according to the requirement of the plant.
 
-```bash
-yarn add gatsby-source-greenhouse
-```
+Sustainable Development Goal trying to achieve :
+1. Industry, Innovation and Infrastructure
+2. Responsible consumption and production
 
-## Usage
+## Implementation
+Implementation details along with the hardware and software details can be found in the proposal.
 
-To use this source you need to supply a Greenhouse API token. You can create a Greenhouse API token by logging into Greenhouse and going to `Configure > Dev Center > API Credential Management > Create New API Key`. Make sure it is type **Harvest**.
+## Execution Details
+### smart_greenhouse.pdf
+Contains the schema descriptions of relations in the database.
 
-API keys need to be authorized to access specific endpoints. Go to `API Credential Management > Manage Permissions` and make sure your key is authorized for the following endpoints:
+### smart_greenhouse_monitoring_system.sql
+This is the sql file for the database. Import this in MySQL for the database
 
-* Jobs
-* Job Posts
-* Departments
+### Running the website
+Go to the directory smart_greenhouse_monitoring_system. Run the command :
 
-Next, edit `gatsby-config.js` to use the plugin:
+#### `npm install`
 
-```
-{
-  ...
-  plugins: [
-    ...
-    {
-      resolve: `gatsby-source-greenhouse`,
-      options: {
-        apiToken: `{API_TOKEN}`,
-        jobPosts: {
-          live: true
-        }
-      },
-    },
-  ]
-}
-```
+This loads the npm modules required for the project. Then execute the command :
 
-By default, `gatsby-source-greenhouse` will only retrieve job openings that are marked as _live_. You can change this by passing in `false` in the `jobPosts` plugin option parameter.
+#### `npm start`
 
-## Querying
+### Starting django server
+Navigate to the Django project directory. Run the following command in the command line :
 
-You can query the all `JobPost` created by the plugin as follows:
+#### `python manage.py runserver`
 
-```graphql
-{
-    allGreenhouseJobPost {
-        edges {
-            node {
-                ...
-            }
-        }
-    }
-}
-```
-
-You can also query all `JobPost` broken out for each department:
-
-```graphql
-{
-  allGreenhouseDepartment {
-    edges {
-      node {
-        name
-        childrenGreenhouseJobPost {
-          title
-        }
-      }
-    }
-  }
-}
-```
+##### Note : Run the django server on the default port (8000)
