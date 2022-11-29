@@ -1,54 +1,70 @@
-# Greenhouse Reference Application
+# Getting Started with Create React App
 
-## Overview
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Greenhouse is a Java web application built for the Spring community that has two primary goals:
+## Available Scripts
 
-1. Serve as an open-source, public-facing reference and driver for Spring technology,
-   including Spring MVC, Security, Integration, Social and Mobile projects.      
-2. Help foster and support our passionate application developer community through the development of useful community services.
+In the project directory, you can run:
 
-## Features
+### `npm start`
 
-* Extensive use of Spring Framework, Spring MVC, Spring Social, Spring Mobile, Spring Security, and Spring Integration projects.
-* An OAuth-based App Catalog that allows Developers to develop new client apps for which users may establish Account->App connections.
-* The ability to connect your local Greenhouse Account to Twitter, Facebook, LinkedIn, and TripIt ServiceProviders.
-* Member Sign Up, Sign In, and Reset Password Modules.
-* A Member Invite Module allowing you to invite your Facebook friends and email contacts.
-* A Member Badge (Award) System that rewards members for community participation.
-* A mobile web version of the app that can be used across multiple smartphone platforms.
-* A Group Event Management Module for powering Spring events, such as conferences and user group meetings.
-* Numerous Spring Framework contributions in the areas of:
- * Data (S3 File Storage and RDMS Migrations)
- * Web (Email Templating, Flash Map, Comet)
-* An agile Continuous Deployment CI Process
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-## Check Out and Build from Source
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
 
-1. Clone the repository from GitHub:
+### `npm test`
 
-		$ git clone git://github.com/SpringSource/greenhouse.git
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-2. Navigate into the cloned repository directory:
+### `npm run build`
 
-		$ cd greenhouse
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-3. The project uses [Maven](http://maven.apache.org/) to build:
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-		$ mvn clean install
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-## Running from the Command Line
+### `npm run eject`
 
-Deploy the .war to any Servlet 2.5 >, such as Tomcat. By default, the app will run in 'embedded' mode which does not require any external setup. The Tomcat 7 Maven plugin is configured for you in the POM file.
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-1. Launch Tomcat from the command line:
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-		$ mvn t7:run
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-2. Access the deployed webapp at 
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-		http://localhost:8080/greenhouse
+## Learn More
 
-## IDE Support
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-If you would like to build and run from a Maven/Java Dynamic Web-project-capable IDE, such as Eclipse/SpringSource Tool Suite, you may simply import "as a Maven Project" into your IDE and deploy the project to your IDE's embedded servlet container.
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
